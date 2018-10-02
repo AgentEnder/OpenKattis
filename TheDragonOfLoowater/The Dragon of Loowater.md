@@ -11,10 +11,10 @@ The knights explained: “To slay the dragon, we must chop off all its heads. Ea
 
 Would there be enough knights to defeat the dragon? The king called on his advisors to help him decide how many and which knights to hire. After having lost a lot of money building Mir Park, the king wanted to minimize the expense of slaying the dragon. As one of the advisors, your job was to help the king. You took it very seriously: if you failed, you and the whole kingdom would be burnt to a crisp!
 
-Input
+### Input
 The input contains several test cases. The first line of each test case contains two integers between 1 and 20000 inclusive, indicating the number n of heads that the dragon has, and the number m of knights in the kingdom. The next n lines each contain an integer, and give the diameters of the dragon’s heads, in centimetres. The following m lines each contain an integer, and specify the heights of the knights of Loowater, also in centimetres. All heights are at most 10000 centimetres.
 
 The last test case is followed by a line containing “0 0”.
 
-Output
+### Output
 For each test case, output a line containing the minimum number of gold coins that the king needs to pay to slay the dragon. If it is not possible for the knights of Loowater to slay the dragon, output a line containing “Loowater is doomed!”.
