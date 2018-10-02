@@ -15,7 +15,7 @@ The minimum number of cars is used.
 
 Find whether it is possible for everyone to make it to work, and if it is, how many cars will end up driving to the office.
 
-Input
+### Input
 One line containing an integer C,C≤100, the number of test cases in the input file.
 
 For each test case there will be:
@@ -32,7 +32,7 @@ An integer 0≤P≤6, the number of passengers they can drive. If the employee i
 
 You may assume that 1≤T≤N,1≤N≤100.
 
-Output
+### Output
 C lines, one for each test case in the order they occur in the input file, each containing the string “Case #X: ” where X is the number of the test case, starting from 1, followed by:
 
 The string “IMPOSSIBLE”, if there are not enough drivers for everyone to commute; or
