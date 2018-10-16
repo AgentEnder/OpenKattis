@@ -11,9 +11,9 @@ Alice is having trouble debugging the robot, and would like your help to determi
 
 We consider two sample graphs, as given in Figures 1 and 2. In these figures, a red arrow indicate an edge corresponding to a forced move, while black arrows indicate edges to other neighbors. The circle around a node is red if it is a possible stopping node.
 
-![Faulty1](url:https://open.kattis.com/problems/faultyrobot/file/statement/en/img-0001.png)
+![Faulty1](https://open.kattis.com/problems/faultyrobot/file/statement/en/img-0001.png)
 Figure 1: First sample graph.
-![Faulty2](url:https://open.kattis.com/problems/faultyrobot/file/statement/en/img-0002.png)
+![Faulty2](https://open.kattis.com/problems/faultyrobot/file/statement/en/img-0002.png)
 Figure 2: Second sample graph.
 In the first example, the robot will cycle forever through nodes 1, 5, and 4 if it does not make a buggy move. A bug could cause it to jump from 1 to 2, but that would be the only buggy move, and so it would never move on from there. It might also jump from 5 to 6 and then have a forced move to end at 7.
 
