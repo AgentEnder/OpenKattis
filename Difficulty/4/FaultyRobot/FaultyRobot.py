@@ -26,17 +26,19 @@ def traversal(start, seen = [], bug_count = 0):
 		return #Dont loop
 	else:
 		seen.append(start) #Add to seen_nodes
-		
-	if bug_count < bug_jumps_allowed:	#Can still make a buggy move
-		for node in buggy_graph[start]: #Check each buggy move
-			traversal(node, seen, bug_count+1) #Increment bug count
 	
 	if len(forced_graph[start]) > 0: #There is a forced move, can't stop
 		for node in forced_graph[start]: #Check each forced move (should only ever be one)
 			traversal(node, seen) #Recursive call for forced move
 	else: #No forced edges, must stop
 		stops.add(start) #Add to set if not in set
+	
+	if bug_count < bug_jumps_allowed:	#Can still make a buggy move
+		for node in buggy_graph[start]: #Check each buggy move
+			traversal(node, seen, bug_count+1) #Increment bug count
+		
+	
 
 traversal(1) #Start Traversal Algorithm
-print("num_stops = {0}, stops = {1}".format(len(stops), stops)) #DEBUGGING PRINT
-#print(len(stops)) #ACTUAL PRINT
+#print("num_stops = {0}, stops = {1}".format(len(stops), stops)) #DEBUGGING PRINT
+print(len(stops)) #ACTUAL PRINT
