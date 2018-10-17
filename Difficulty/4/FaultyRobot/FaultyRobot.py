@@ -33,7 +33,7 @@ def traversal(start, seen = [], bug_count = 0, prev_buggy = False):
 	
 	if len(forced_graph[start]) > 0: #There is a forced move, can't stop
 		for node in forced_graph[start]: #Check each forced move (should only ever be one)
-			traversal(node, seen) #Recursive call for forced move
+			traversal(node, seen, bug_count=bug_count, prev_buggy=False) #Recursive call for forced move
 	else: #No forced edges, must stop
 		stops.add(start) #Add to set if not in set
 		
