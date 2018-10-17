@@ -1,5 +1,5 @@
 #FaultyRobot, OpenKattis, https://open.kattis.com/problems/faultyrobot
-## Sln by Craigory Coppola (Partial due to wrong answer on test case 4)
+## Sln by Craigory Coppola (Partial due to run time error on test case 8)
 
 import sys
 
@@ -20,7 +20,6 @@ stops = set() #Only record unique values
 
 #Recursive Depth First Traversal, modified for problem specifics.
 def traversal(start, seen = [], bug_count = 0, prev_buggy = False):
-	
 	#Loop Detection
 	if start in seen: #Loop Found
 		return #Dont loop
@@ -29,16 +28,18 @@ def traversal(start, seen = [], bug_count = 0, prev_buggy = False):
 	
 	if bug_count < bug_jumps_allowed:	#Can still make a buggy move
 		for node in buggy_graph[start]: #Check each buggy move
-			traversal(node, seen, bug_count+1, True) #Increment bug count
-	
+			traversal(node, seen, bug_count+1, True) #increment bug count on further calls
 	if len(forced_graph[start]) > 0: #There is a forced move, can't stop
 		for node in forced_graph[start]: #Check each forced move (should only ever be one)
-			traversal(node, seen, bug_count=bug_count, prev_buggy=False) #Recursive call for forced move
+			traversal(node, seen, bug_count=bug_count, prev_buggy = prev_buggy) #Recursive call for forced move
 	else: #No forced edges, must stop
-		stops.add(start) #Add to set if not in set
+		stops.add(start)#Add to set if not in set
+	
+	
+	
 		
 	
 
 traversal(1) #Start Traversal Algorithm
-#print("num_stops = {0}, stops = {1}".format(len(stops), stops)) #DEBUGGING PRINT
+sys.stderr.write("num_stops = {0}, stops = {1}".format(len(stops), stops)) #DEBUGGING PRINT
 print(len(stops)) #ACTUAL PRINT
