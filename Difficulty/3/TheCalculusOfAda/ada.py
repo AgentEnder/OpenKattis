@@ -7,17 +7,17 @@ ints = [int(x) for x in sys.stdin.readline().split()][1:]
 
 layers = [0]
 
-def solve_recursive(nums, layers_tracker):
+def solve_recursive(nums):
 	differences = [nums[i+1]-nums[i] for i in range(len(nums)-1)]
 	layers[0]+=1
 	if len(differences) == 0:
 		return nums[-1]
 	elif len(set(differences)) == 1:
 		return nums[-1] + differences[0]
-	next_difference = solve_recursive(differences, layers_tracker)
+	next_difference = solve_recursive(differences)
 	return nums[-1]+next_difference
 
-ans = solve_recursive(ints, layers)
+ans = solve_recursive(ints)
 	
 print(layers[0], ans)
 	
