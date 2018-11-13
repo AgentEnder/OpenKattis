@@ -13,7 +13,7 @@ while True:
 	for point in points:
 		mod_point = [point[x]-mid_point[x] for x in range(2)]
 		sum_abs_point = sum([abs(x) for x in mod_point])
-		sum0
+		sum_mod_point = sum(mod_point)
 		
 		if sum_abs_point == 0:
 			continue
